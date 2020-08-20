@@ -158,18 +158,26 @@
 
 	//Modal Image
 	var degreeModal = document.getElementById("degreeModal");
+	var diplomaModal = document.getElementById("diplomaModal");
 	var certificateModal = document.getElementById("certificateModal");
 
 	// Get the image and insert it inside the modal - use its "alt" text as a caption
 	var degreeImg = document.getElementById("degreeImg");
+	var diplomaImg = document.getElementById("diplomaImg");
 	var certificateImg = document.getElementById("certificateImg");
 
 	var degreeImg01 = document.getElementById("degreeImg01");
+	var diplomaImg01 = document.getElementById("diplomaImg01");
 	var certificateImg01 = document.getElementById("certificateImg01");
 
 	degreeImg.onclick = function(){
 		degreeModal.style.display = "block";
 		degreeImg01.src = this.src;
+	}
+
+	diplomaImg.onclick = function(){
+		diplomaModal.style.display = "block";
+		diplomaImg01.src = this.src;
 	}
 
 	certificateImg.onclick = function(){
@@ -180,6 +188,7 @@
 	// Get the <span> element that closes the modal
 	var span1 = document.getElementsByClassName("close")[0];
 	var span2 = document.getElementsByClassName("close")[1];
+	var span3 = document.getElementsByClassName("close")[2];
 
 	// When the user clicks on <span> (x), close the modal
 	span1.onclick = function() {
@@ -187,13 +196,18 @@
 	}
 
 	span2.onclick = function() {
+		diplomaModal.style.display = "none";
+	}
+
+	span3.onclick = function() {
 		certificateModal.style.display = "none";
 	}
 
 	// When the user clicks anywhere outside of the modal, close it
 	window.onclick = function(event) {
-		if (event.target == degreeModal || event.target == certificateModal) {
+		if (event.target == degreeModal || event.target == certificateModal || event.target == diplomaModal) {
 		degreeModal.style.display = "none";
+		diplomaModal.style.display = "none";
 		certificateModal.style.display = "none";
 		}
   	}
